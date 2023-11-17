@@ -9,33 +9,32 @@ L’output del prezzo finale va messo fuori in forma umana (con massimo due deci
 
 //CHIEDO all'utente il numero di km da percorrere
 const km = parseInt(prompt("Per favore inserisci il numero di chilometri da percorrere"));
-// console.log(km);
+console.log(km);
 
 //CHIEDO all'utente la sua eta'
 const userEta = parseInt(prompt("Per favore inserisci la tua eta'"));
-// console.log(userEta);
+console.log(userEta);
 
 //Calcolo del prezzo totale del viaggio (0.21 € al km)
 const priceKm = 0.21;
 let calcTicket = priceKm * km;
-// console.log(calcTicket);
+console.log(calcTicket);
 
-//SE minorenne applico uno sconto del 20%
+//Definisco i valori "minorenne" ed "over65"
 let minorenne = userEta < 18;
 let over65 = userEta > 65;
 
-if (condition) {
+//Definisco la mia variabile sullo sconto
+let sconto;
 
-} else if (condition) {
-
-} else {
-
+if (minorenne) { //SE minorenne applico uno sconto del 20%
+    sconto = calcTicket * 0.20;
+    calcTicket = calcTicket - sconto
+    console.log(sconto, calcTicket);
+} else if (over65) { //ALTRIMENTI over 65 applico uno sconto del 40%
+    sconto = calcTicket * 0.40;
+    calcTicket = calcTicket - sconto
+    console.log(sconto, calcTicket);
 }
-
-//SE ALTRIMENTI over 65 applico uno sconto del 40%
-
-
-//ALTRIMENTI se non si e' in nessuno dei due parametri il prezzo sara' "pieno"
-
 
 //OUTPUT finale in forma umana (ovvero piu' comprensibile numericamente parlando)
