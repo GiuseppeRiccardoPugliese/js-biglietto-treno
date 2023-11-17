@@ -25,21 +25,20 @@ let minorenne = userEta < 18;
 let over65 = userEta > 65;
 
 //Definisco la mia variabile sullo sconto e del risultato
-let sconto;
+let sconto = 0;
 let risultato;
-parseFloat(risultato.toFixed)(2);
 
+// Condizione
 if (minorenne) { //SE minorenne applico uno sconto del 20%
     sconto = defaultPrice * 0.20;
-    risultato = defaultPrice - sconto
-    console.log(sconto, risultato);
-} else if (over65) { //ALTRIMENTI over 65 applico uno sconto del 40%
+    console.log(sconto);
+} else if (over65) { //ALTRIMENTI SE over 65 applico uno sconto del 40%
     sconto = defaultPrice * 0.40;
-    risultato = defaultPrice - sconto
-    console.log(sconto, risultato);
-} else {
-    risultato = defaultPrice
+    console.log(sconto);
 }
+risultato = defaultPrice - sconto;
+console.log(risultato);
 
 //OUTPUT finale in forma umana (ovvero piu' comprensibile numericamente parlando)
-document.getElementById("final_price").innerHTML = risultato
+document.getElementById("final_price").innerHTML = risultato.toFixed(2);
+// parseFloat(risultato.toFixed)(2);
