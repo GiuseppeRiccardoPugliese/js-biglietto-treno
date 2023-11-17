@@ -17,24 +17,29 @@ console.log(userEta);
 
 //Calcolo del prezzo totale del viaggio (0.21 € al km)
 const priceKm = 0.21;
-let calcTicket = priceKm * km;
-console.log(calcTicket);
+let defaultPrice = priceKm * km;
+console.log(defaultPrice);
 
 //Definisco i valori "minorenne" ed "over65"
 let minorenne = userEta < 18;
 let over65 = userEta > 65;
 
-//Definisco la mia variabile sullo sconto
+//Definisco la mia variabile sullo sconto e del risultato
 let sconto;
+let risultato;
+parseFloat(risultato.toFixed)(2);
 
 if (minorenne) { //SE minorenne applico uno sconto del 20%
-    sconto = calcTicket * 0.20;
-    calcTicket = calcTicket - sconto
-    console.log(sconto, calcTicket);
+    sconto = defaultPrice * 0.20;
+    risultato = defaultPrice - sconto
+    console.log(sconto, risultato);
 } else if (over65) { //ALTRIMENTI over 65 applico uno sconto del 40%
-    sconto = calcTicket * 0.40;
-    calcTicket = calcTicket - sconto
-    console.log(sconto, calcTicket);
+    sconto = defaultPrice * 0.40;
+    risultato = defaultPrice - sconto
+    console.log(sconto, risultato);
+} else {
+    risultato = defaultPrice
 }
 
 //OUTPUT finale in forma umana (ovvero piu' comprensibile numericamente parlando)
+document.getElementById("final_price").innerHTML = risultato
